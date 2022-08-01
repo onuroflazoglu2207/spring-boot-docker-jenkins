@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-lts
+    #restart: unless-stopped
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    # password with cmd: docker exec <container> cat /var/jenkins_home/secrets/initialAdminPassword
+    
